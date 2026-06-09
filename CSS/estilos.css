@@ -1,0 +1,691 @@
+/* =========================
+   CONFIGURACIÓN GENERAL
+========================= */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.8;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+    background-color: #003566;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo{
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    color:white;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.logo-img{
+    width:65px;
+    height:65px;
+    object-fit:contain;
+}
+
+.menu{
+    list-style: none;
+    display: flex;
+}
+
+.menu li{
+    margin-left: 25px;
+}
+
+.menu a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.menu a:hover{
+    color: #ffd60a;
+}
+
+/* =========================
+   PORTADA
+========================= */
+
+/* =========================
+   HERO CON CARRUSEL
+========================= */
+
+.hero{
+    position: relative;
+    height: 90vh;
+    overflow: hidden;
+}
+
+.hero-lugares{
+    height: 85vh;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.55),
+        rgba(0,0,0,.55)
+    ),
+    url("../imagenes/banner-lugares.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.hero-comida{
+    height: 85vh;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.55),
+        rgba(0,0,0,.55)
+    ),
+    url("../imagenes/banner-comida.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.slider{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.slide{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: slider 20s infinite;
+}
+
+.slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+}
+
+.slide:nth-child(1){
+    animation-delay: 0s;
+}
+
+.slide:nth-child(2){
+    animation-delay: 5s;
+}
+
+.slide:nth-child(3){
+    animation-delay: 10s;
+}
+
+.slide:nth-child(4){
+    animation-delay: 15s;
+}
+
+@keyframes slider{
+
+    0%{
+        opacity:0;
+    }
+
+    5%{
+        opacity:1;
+    }
+
+    25%{
+        opacity:1;
+    }
+
+    30%{
+        opacity:0;
+    }
+
+    100%{
+        opacity:0;
+    }
+}
+
+.hero-contenido{
+    position: absolute;
+    z-index: 10;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+    max-width: 900px;
+    width: 90%;
+}
+
+.hero-contenido h1{
+    color: white;
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.hero-contenido p{
+    color: white;
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+.hero-contenido{
+    max-width: 900px;
+    padding: 30px;
+}
+
+.hero-contenido h1{
+    color: white;
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.hero-contenido p{
+    color: white;
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+.boton{
+    display: inline-block;
+    background-color: #ffd60a;
+    color: black;
+    text-decoration: none;
+    padding: 15px 35px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.boton:hover{
+    background-color: white;
+}
+
+/* =========================
+   SECCIONES GENERALES
+========================= */
+
+section{
+    padding: 70px 10%;
+}
+
+section h2{
+    text-align: center;
+    margin-bottom: 30px;
+    color: #003566;
+    font-size: 36px;
+}
+
+section p{
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* =========================
+   INTRODUCCIÓN
+========================= */
+
+.introduccion{
+    background-color: white;
+}
+
+/* =========================
+   GALERÍA
+========================= */
+
+.galeria{
+    background-color: #f8f9fa;
+}
+
+.contenedor-galeria{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card{
+    background: white;
+    width: 350px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 5px 15px rgba(0,0,0,.15);
+    transition: 0.4s;
+}
+
+.card:hover{
+    transform: translateY(-10px);
+}
+
+.card img{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.card h3{
+    text-align: center;
+    color: #003566;
+    margin-top: 15px;
+}
+
+.card p{
+    padding: 15px;
+}
+
+/* =========================
+   BENEFICIOS
+========================= */
+
+.informacion{
+    background-color: white;
+}
+
+.beneficios{
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.beneficio{
+    width: 350px;
+    background-color: #e9ecef;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.beneficio h3{
+    color: #003566;
+    margin-bottom: 15px;
+}
+
+/* =========================
+   TABLA
+========================= */
+
+.destacados{
+    background-color: #f8f9fa;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+th{
+    background-color: #003566;
+    color: white;
+    padding: 15px;
+}
+
+td{
+    padding: 15px;
+}
+
+table,
+th,
+td{
+    border: 1px solid #ccc;
+}
+
+tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+tr:hover{
+    background-color: #e0e0e0;
+}
+
+/* =========================
+   ACTIVIDADES
+========================= */
+
+.actividades{
+    background-color: white;
+}
+
+.actividades ul{
+    width: 70%;
+    margin: auto;
+}
+
+.actividades li{
+    margin-bottom: 12px;
+    font-size: 18px;
+}
+
+/* =========================
+   ENLACES
+========================= */
+
+.enlaces{
+    background-color: #f8f9fa;
+}
+
+.enlaces ul{
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.enlaces li{
+    margin-bottom: 10px;
+}
+
+.enlaces a{
+    color: #003566;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.enlaces a:hover{
+    color: #ff8800;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background-color: #001d3d;
+    color: white;
+    padding: 50px;
+    text-align: center;
+}
+
+.footer-contenido h3{
+    margin-bottom: 15px;
+    font-size: 30px;
+}
+
+.footer-contenido p{
+    margin-bottom: 10px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:992px){
+
+    .navbar{
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .menu{
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-contenido h1{
+        font-size: 42px;
+    }
+
+    .hero-contenido p{
+        font-size: 18px;
+    }
+
+    .beneficios{
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .menu{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .menu li{
+        margin: 10px 0;
+    }
+
+    .hero-contenido h1{
+        font-size: 32px;
+    }
+
+    .hero-contenido p{
+        font-size: 16px;
+    }
+
+    .card{
+        width: 100%;
+    }
+
+    table{
+        font-size: 14px;
+    }
+
+    section{
+        padding: 50px 5%;
+    }
+
+}
+
+/* ==========================
+   CONTACTO
+========================== */
+
+.banner-contacto{
+    background: linear-gradient(135deg,#003566,#001d3d);
+    color:white;
+    text-align:center;
+    padding:80px 20px;
+}
+
+.logo-universidad{
+    width:180px;
+    margin-bottom:20px;
+}
+
+.presentacion{
+    display:flex;
+    gap:40px;
+    padding:60px 10%;
+    flex-wrap:wrap;
+}
+
+.perfil,
+.descripcion{
+    flex:1;
+    min-width:300px;
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.linea{
+    width:100px;
+    height:4px;
+    background:#ffd60a;
+    margin:15px 0;
+}
+
+.contacto-grid{
+    display:grid;
+    grid-template-columns:1fr 2fr;
+    gap:40px;
+    padding:60px 10%;
+    background:#f8f9fa;
+}
+
+.info-contacto{
+    background:#003566;
+    color:white;
+    padding:30px;
+    border-radius:12px;
+}
+
+.dato{
+    margin:20px 0;
+    padding:15px;
+    background:rgba(255,255,255,.1);
+    border-radius:8px;
+}
+
+.formulario-contacto{
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.formulario-contacto form{
+    display:flex;
+    flex-direction:column;
+}
+
+.formulario-contacto input,
+.formulario-contacto textarea{
+    margin-bottom:15px;
+    padding:15px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+.formulario-contacto button{
+    background:#003566;
+    color:white;
+    border:none;
+    padding:15px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.formulario-contacto button:hover{
+    background:#001d3d;
+}
+
+.ubicacion{
+    padding:60px 10%;
+    text-align:center;
+}
+
+.ubicacion img{
+    width:100%;
+    max-width:900px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+@media(max-width:768px){
+
+    .contacto-grid{
+        grid-template-columns:1fr;
+    }
+
+    .presentacion{
+        flex-direction:column;
+    }
+
+}
+
+
+.estadisticas{
+    background: linear-gradient(135deg,#003566,#001d3d);
+    color:white;
+    text-align:center;
+    padding:80px 10%;
+}
+
+.estadisticas h2{
+    color:white;
+    margin-bottom:20px;
+}
+
+.subtitulo-estadisticas{
+    max-width:800px;
+    margin:auto;
+    margin-bottom:50px;
+    font-size:18px;
+}
+
+.contenedor-estadisticas{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.estadistica{
+    background:rgba(255,255,255,0.1);
+    backdrop-filter:blur(5px);
+    padding:30px;
+    border-radius:15px;
+    width:250px;
+    transition:0.4s;
+}
+
+.estadistica:hover{
+    transform:translateY(-10px);
+    background:rgba(255,255,255,0.2);
+}
+
+.estadistica h3{
+    font-size:50px;
+    color:#ffd60a;
+    margin-bottom:10px;
+}
+
+.estadistica p{
+    font-size:18px;
+    text-align:center;
+}
